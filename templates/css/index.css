@@ -1,0 +1,25 @@
+body {
+  overflow: hidden;
+}
+
+#heading {
+  text-align: center;
+  color: red;
+  background-color: rgb(206, 221, 226);
+  margin-top: 10px;
+}
+
+#textArea {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 112px;
+  resize: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  border-color: black;
+
+}
+
+#descriptor {
+  color: green;
+}

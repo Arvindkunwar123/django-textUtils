@@ -54,7 +54,8 @@ ROOT_URLCONF = 'textUtils.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates/html",
+                 "templates/css"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

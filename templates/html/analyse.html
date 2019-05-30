@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/../textUtils/templates/css/analyse.css" rel="stylesheet" />
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+    ></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="margin-left: 40px; margin-right: 40px; overflow: hidden;">
+    <h1
+      class="ui heading"
+      id="heading"
+      style="text-align: center; color: red; background-color: rgb(206, 221, 226); margin-top: 10px;"
+    >
+      WELCOME TO TEXT UTILS
+    </h1>
+
+    <br />
+
+    <h3 id="descriptor" style="color: green;">Your analysed text:</h3>
+
+    <form action="analyse/" method="GET">
+      <div class="ui form">
+        <div class="field">
+          <textarea
+            spellcheck="false"
+            id="textArea"
+            readonly="readonly"
+            style="margin-top: 0px; margin-bottom: 0px; resize: none; height: 338px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 20px; border-color: black;"
+            name="textArea"
+            >{{ result }}</textarea
+          >
+        </div>
+      </div>
+
+      <br /><br />
+
+      <h3 id="descriptor" style="color: dodgerblue; text-align: center">
+        Thanks for using <strong>Text Utils</strong>. Hope see you again. Have a
+        good day.
+      </h3>
+    </form>
+
+    <br /><br />
+
+    <button class="ui green button" id="submitButton" style="margin-left: 46%">
+      Text Utils
+    </button>
+  </body>
+</html>
