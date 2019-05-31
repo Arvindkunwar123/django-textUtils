@@ -29,7 +29,7 @@
 
     <h3 id="descriptor" style="color: green;">Enter the text below:</h3>
 
-    <form action="analyse/" method="GET">
+    <form action="analyse/" method="POST"> {% csrf_token %}
       <div class="ui form">
         <div class="field">
           <textarea

@@ -10,13 +10,13 @@ class Pipe:
         return HttpResponse(render(request, "index.html"))
 
     def analyse(self, request):
-        removePuncBool = request.GET.get("removePunc", "off")
-        capFirstBool = request.GET  .get("capFirst", "off")
-        newLineRemoveBool = request.GET.get("newLineRemove", "off")
-        spaceRemoveBool = request.GET.get("spaceRemove", "off")
-        charCountBool = request.GET.get("charCount", "off")
+        removePuncBool = request.POST.get("removePunc", "off")
+        capFirstBool = request.POST  .get("capFirst", "off")
+        newLineRemoveBool = request.POST.get("newLineRemove", "off")
+        spaceRemoveBool = request.POST.get("spaceRemove", "off")
+        charCountBool = request.POST.get("charCount", "off")
 
-        result = request.GET.get("textArea", "No text provided")
+        result = request.POST.get("textArea", "No text provided")
         chars = None
 
         if removePuncBool == "on":
@@ -41,33 +41,33 @@ class Pipe:
 
     def removePunc(self, request, text=""):
         if not text:
-            return Tools(method="removePunc", text=request.GET.get("textArea", "No text provided")).removePunc()
+            return Tools(method="removePunc", text=request.POST.get("textArea", "No text provided")).removePunc()
         else:
             return Tools(method="removePunc", text=text).removePunc()
 
     def capFirst(self, request, text=""):
         if not text:
-            return Tools(method="capFirst", text=request.GET.get("textArea", "No text provided")).capFirst()
+            return Tools(method="capFirst", text=request.POST.get("textArea", "No text provided")).capFirst()
         else:
             return Tools(method="removePunc", text=text).capFirst()
 
     def newLineRemove(self, request, text=""):
         if not text:
-            return Tools(method="newLineRemove", text=request.GET.get("textArea", "No text provided")).newLineRemove()
+            return Tools(method="newLineRemove", text=request.POST.get("textArea", "No text provided")).newLineRemove()
         else:
             return Tools(method="removePunc", text=text).newLineRemove()
 
-    def spaceRemove(self, request, text=""):
-        if not text:
-            return Tools(method="spaceRemove", text=request.GET.get("textArea", "No text provided")).spaceRemove()
-        else:
-            return Tools(method="removePunc", text=text).spaceRemove()
-
     def charCount(self, request, text=""):
         if not text:
-            return Tools(method="charCount", text=request.GET.get("textArea", "No text provided")).charCount()
+            return Tools(method="charCount", text=request.POST.get("textArea", "No text provided")).charCount()
         else:
             return Tools(method="removePunc", text=text).charCount()
+
+    def spaceRemove(self, request, text=""):
+        if not text:
+            return Tools(method="spaceRemove", text=request.POST.get("textArea", "No text provided")).spaceRemove()
+        else:
+            return Tools(method="removePunc", text=text).spaceRemove()
 
 
 class Tools:
@@ -86,7 +86,7 @@ class Tools:
         return self.text
     
     def newLineRemove(self):
-        self.text = self.text.replace("\n", "")
+        self.text = self.text.replace("\n", "").replace("\r", "")
         return self.text
     
     def spaceRemove(self):
@@ -96,6 +96,5 @@ class Tools:
     def charCount(self):
         return {"Including spaces": len(self.text),
                 "Without spaces": len(self.text.replace(" ", ""))}
-    
-    
-    
+
+
