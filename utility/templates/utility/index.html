@@ -4,32 +4,22 @@
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="/../textUtils/templates/css/index.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/static/utility/css/index.css" />
+    <link rel="stylesheet" href="/static/utility/css/semantic.min.css" />
+    <link rel="stylesheet" href="/static/utility/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/utility/css/argon.min.css" />
   </head>
   <body style="margin-left: 40px; margin-right: 40px; overflow: hidden;">
-    <h1
-      class="ui heading"
-      id="heading"
-      style="text-align: center; color: red; background-color: rgb(206, 221, 226); margin-top: 10px;"
-    >
-      WELCOME TO TEXT UTILS
-    </h1>
+    <div class="alert alert-default" id="intro" role="alert">
+      <b>WELCOME TO TEXT UTILS!</b>
+    </div>
 
     <br />
 
-    <h3 id="descriptor" style="color: green;">Enter the text below:</h3>
+    <h3 id="descriptor">Enter the text below:</h3>
 
-    <form action="analyse/" method="POST"> {% csrf_token %}
+    <form action="analyse/" method="POST">
+      {% csrf_token %}
       <div class="ui form">
         <div class="field">
           <textarea
@@ -40,41 +30,36 @@
           ></textarea>
         </div>
       </div>
-
       <br />
-
-      <!-- <div class="ui slider checkbox">
-        <input type="checkbox" name="newsletter" />
-        <label>Accept terms and conditions</label>
-      </div> -->
       <div class="ui checkbox" style="margin-left: 30px;">
         <input type="checkbox" name="removePunc" />
-        <label class="gui_text"> Remove punctuations</label>
+        <label class="option"> Remove punctuations</label>
       </div>
       <br />
       <div class="ui checkbox" style="margin-left: 30px;">
         <input type="checkbox" name="capFirst" />
-        <label class="gui_text">Capitalize first letter</label>
+        <label class="option">Capitalize first letter</label>
       </div>
       <br />
       <div class="ui checkbox" style="margin-left: 30px;">
         <input type="checkbox" name="newLineRemove" />
-        <label class="gui_text">Remove new lines</label>
+        <label class="option">Remove new lines</label>
       </div>
       <br />
       <div class="ui checkbox" style="margin-left: 30px;">
         <input type="checkbox" name="spaceRemove" />
-        <label class="gui_text">Remove spaces</label>
+        <label class="option">Remove spaces</label>
       </div>
       <br />
       <div class="ui checkbox" style="margin-left: 30px;">
         <input type="checkbox" name="charCount" />
-        <label class="gui_text">Count the no. of characters</label>
+        <label class="option">Count the no. of characters</label>
       </div>
 
       <br /><br />
+
       <button
-        class="ui primary button"
+        class="btn btn-primary"
         id="submitButton"
         type="submit"
         style="margin-left: 30px"

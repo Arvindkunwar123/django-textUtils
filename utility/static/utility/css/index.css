@@ -1,0 +1,30 @@
+body {
+  overflow: hidden;
+}
+
+#textArea {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 112px;
+  resize: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  border-color: black;
+
+}
+
+#descriptor {
+  color: green;
+  font-size: 24px;
+}
+
+
+#intro {
+  font-size: 30px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+ui.checkbox->.option {
+  font-size: 16px;
+}
