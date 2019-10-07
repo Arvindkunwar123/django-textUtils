@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/utility/css/semantic.min.css" />
+    <link rel="stylesheet" href="/static/utility/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/utility/css/argon.min.css" />
+    <link rel="stylesheet" href="/static/utility/css/index.css" />
+    <link rel="stylesheet" href="/static/utility/css/analyse.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="alert alert-default" id="intro" role="alert">
+        <b>WELCOME TO TEXT UTILS!</b>
+      </div>
+
+      <br />
+
+      <h3 id="descriptor">Enter the text below:</h3>
+
+      <form action="analyse/" method="POST">
+        {% csrf_token %}
+        <div class="ui form">
+          <div class="field">
+            <textarea
+              spellcheck="false"
+              id="textArea"
+              name="textArea"
+            ></textarea>
+          </div>
+        </div>
+        <br />
+        <div class="ui checkbox">
+          <input type="checkbox" name="removePunc" />
+          <label class="option"> Remove punctuations</label>
+        </div>
+        <br />
+        <div class="ui checkbox">
+          <input type="checkbox" name="capFirst" />
+          <label class="option">Capitalize first letter</label>
+        </div>
+        <br />
+        <div class="ui checkbox">
+          <input type="checkbox" name="newLineRemove" />
+          <label class="option">Remove new lines</label>
+        </div>
+        <br />
+        <div class="ui checkbox">
+          <input type="checkbox" name="spaceRemove" />
+          <label class="option">Remove spaces</label>
+        </div>
+        <br />
+        <div class="ui checkbox">
+          <input type="checkbox" name="charCount" />
+          <label class="option">Count the no. of characters</label>
+        </div>
+
+        <br /><br />
+
+        <div class="button">
+          <button class="btn btn-primary" id="submitButton" type="submit">
+            Analyse
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

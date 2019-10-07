@@ -1,4 +1,12 @@
+@import "/static/utility/css/google sans.css";
+
+* {
+  font-family: "Google Sans", sans-serif;
+}
+
 body {
+  margin-left: 40px;
+  margin-right: 40px;
   overflow: hidden;
 }
 
@@ -12,13 +20,13 @@ body {
 #textArea {
   margin-top: 0px;
   margin-bottom: 0px;
-  height: 112px;
   resize: none;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 338px;
   font-size: 20px;
   border-color: black;
 }
 
 #descriptor {
-  color: green;
+  color: dodgerblue;
 }
+
